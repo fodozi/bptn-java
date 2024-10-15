@@ -2,11 +2,13 @@ package com.bptn.course_Week3_;
 
 
 	
-  // Interface Definition
+//   Interface Definition
 	interface ObsidiAdmin {
-		void enrolled(int amount);
+ 	void enrolled(int amount);
 
-	}
+    }
+
+		 
 
 	//High-Level Module
 	class BptnLeadership {
@@ -19,18 +21,26 @@ package com.bptn.course_Week3_;
 
 		// Enrollment process method
 		public void enrolled(int amount) { 
-			ObsidiAdmin.enrolled(amount); // Delegate enrollment processing
+			ObsidiAdmin.enrolled(amount); 
 
 
 		}
 	}
 
-	class CohortOne implements ObsidiAdmin { 
-		@Override
-		public void enrolled(int amount) {
-			System.out.println("Students Enrolled : " + amount );
-		}
+//	class CohortOne implements ObsidiAdmin { 
+//		@Override
+//		public void enrolled(int amount) {
+//			System.out.println("Students Enrolled : " + amount );
+//		}
+//	}
+
+
+	class CohortTwo implements ObsidiAdmin {
+		
+	@Override
+	public void enrolled(int amount) {
+	     System.out.println("Students Enrolled : " + amount );
 	}
-
-
+}
+	
 
