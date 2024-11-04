@@ -1,0 +1,62 @@
+package com.bptn.course_week5_;
+
+//import the required classes
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSum {
+	// Method that returns the indices of two elements in the nums array that add up
+	// to the target value
+	public int[] twoSum(int[] nums, int target) {
+		// Initialize a HashMap to store the value of each element in the nums array and its index
+		 Map<Integer, Integer> map = new HashMap<>();
+
+		// Loop through each element in the nums array
+		//Using a for loop to iterate through each element in the nums array 
+		//checking if it forms a pair with another element to sum up to the target.
+		for (int i = 0; i < nums.length; i++) {
+			// Calculate the complement, which is the difference between the target and the
+			// current element
+			int complement = target - nums[i]; 
+
+			// Check if the complement is found in the HashMap
+			if (map.containsKey(complement)) {
+				/* If the complement is found, return the index of the complement and the current index because these two indices correspond to two elements that add up to the target*/
+				return new int[] { map.get(complement), i };
+			}
+		// Here, I am storing the current element and its index found in a 
+		//hashmap, so it can be used when the other when a future element can pair with it.
+		// If the complement is not found, put the current element and its index into the HashMap
+			map.put(nums[i], i);
+		}
+
+		// If no two sum solution is found, throw an IllegalArgumentException
+		//The exception at the end of the loops allows the loop to iterate 
+		//through the elements first and only through an exception when it 
+		//can't find a pair that sums up to the target.
+		throw new IllegalArgumentException("No two sum solution");
+	}
+  // Do not modify the code below:
+	// Main method to test the twoSum method
+	public static void main(String[] args) {
+		// Example array of integers
+		int[] nums = { 2, 7, 11, 15 };
+
+		// Example target value
+		int target = 9;
+
+		// Create a TwoSum object
+		TwoSum solution = new TwoSum();
+
+		// Call the twoSum method to get the indices of the two elements that add up to
+		// the target value
+		int[] indices = solution.twoSum(nums, target);
+
+		// Print the result
+		System.out.println("The indices are: " + indices[0] + " and " + indices[1]);
+	}
+}
+
+//In summary, what was new to me was the use of complements in forming a pair to sum up to a target
+//An issue i faced was not knowing how to call twosum method to get the indices
+//Also what i will remember for future use is to always only use IllegalArgumentException at the end of a loop.

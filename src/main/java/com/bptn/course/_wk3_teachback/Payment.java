@@ -23,22 +23,22 @@ class PaymentService {
 	}
 }
 
-//Low-Level 1 CreditCard Payment
-//class CreditCardPayment implements PaymentOption { 
-//	@Override
-//	public void pay(double amount) {
-//		System.out.println("Paid $" + amount + " using Credit Card.");
-//	}
-//}
-
-//Low-Level 2 GiftCard Payment
-class GiftCardPayment implements PaymentOption { 
+ //Low-Level 1 CreditCard Payment
+class CreditCardPayment implements PaymentOption { 
 	@Override
 	public void pay(double amount) {
-		System.out.println("Paid $" + amount + " using Gift Card.");
+		System.out.println("Paid $" + amount + " using Credit Card.");
 	}
 }
 
+//Low-Level 2 GiftCard Payment
+//class GiftCardPayment implements PaymentOption { 
+//	@Override
+//	public void pay(double amount) {
+//		System.out.println("Paid $" + amount + " using Gift Card.");
+//	}
+//}
+//
 
 
 
